@@ -7,7 +7,7 @@ import { NextUIProvider } from "@nextui-org/react";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <NextUIProvider>
+  <NextUIProvider disableBaseline>
     <App />
   </NextUIProvider>
 );
