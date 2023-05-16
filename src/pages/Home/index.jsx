@@ -7,7 +7,7 @@ export default function Home() {
     <div className="layout">
       <Menu />
       <div className="app-bar">
-        <Navbar shouldHideOnScrollshouldHideOnScroll variant="sticky">
+        <Navbar shouldHideOnScroll variant="sticky">
           <Navbar.Brand>
             <Text b color="inherit" hideIn="xs">
               ACME
