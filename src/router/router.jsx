@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "../pages/Home";
+import MainPage from "../pages/MainPage";
 import { CssBaseline } from "@nextui-org/react";
 
 export default function Router() {
@@ -8,7 +8,7 @@ export default function Router() {
     <CssBaseline>
       <BrowserRouter basename="/">
         <Routes>
-          <Route element={<Home />} path="/home" />
+          <Route element={<MainPage />} path="/home" />
         </Routes>
       </BrowserRouter>
     </CssBaseline>

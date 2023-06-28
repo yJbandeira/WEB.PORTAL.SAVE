@@ -266,3 +266,37 @@ export const HomeIcon = ({ stroke = "#FFFFFF" }) => {
     </svg>
   );
 };
+
+export const LinkIcon = ({ stroke = "#FFFFFF" }) => {
+  return (
+    <svg
+      width="25"
+      height="25"
+      viewBox="0 0 25 25"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M10.1661 17.1701H7.16568C5.97204 17.1701 4.82728 16.6959 3.98325 15.8519C3.13921 15.0079 2.66504 13.8631 2.66504 12.6695C2.66504 11.4758 3.13921 10.3311 3.98325 9.48703C4.82728 8.643 5.97204 8.16882 7.16568 8.16882H10.1661"
+        stroke={stroke}
+        stroke-width="1.00189"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M14.6653 8.16882H17.6657C18.8594 8.16882 20.0041 8.643 20.8481 9.48703C21.6922 10.3311 22.1664 11.4758 22.1664 12.6695C22.1664 13.8631 21.6922 15.0079 20.8481 15.8519C20.0041 16.6959 18.8594 17.1701 17.6657 17.1701H14.6653"
+        stroke={stroke}
+        stroke-width="1.00189"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M8.07104 12.6678H16.8576"
+        stroke={stroke}
+        stroke-width="1.00189"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+};

@@ -1,0 +1,71 @@
+.background-menu {
+  background: #00002f;
+  max-width: 250px;
+  min-width: 250px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s;
+
+  &--closed {
+    max-width: 70px;
+    min-width: 70px;
+  }
+
+  @media (max-width: 430px) {
+    display: none;
+  }
+}
+
+#menu {
+  .nextui-c-bDGMeb-hjqCeZ-cv {
+    margin-right: 0px;
+  }
+}
+
+.buttons-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 10px;
+
+  &--button {
+    transition: all 0.3s;
+    display: flex;
+    gap: 5px;
+    justify-content: flex-start;
+
+    &--onlyIcon {
+      padding: 0px;
+      gap: 0px;
+      justify-content: center;
+    }
+  }
+
+  &--label {
+    transition: all 0.3s;
+    opacity: 1;
+    color: white;
+
+    &--onlyIcon {
+      //display: none;
+      opacity: 0;
+      width: 0px;
+    }
+  }
+}
+
+.button-close-menu {
+  margin: 10px;
+  width: auto;
+}
+
+.chevron-left {
+  display: flex;
+  transition: transform 0.3s;
+
+  &--rotated {
+    transform: rotate(180deg);
+  }
+}

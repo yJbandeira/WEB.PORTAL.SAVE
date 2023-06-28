@@ -1,27 +1,34 @@
 import { Button } from "@nextui-org/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./index.scss";
 import { ChevronLeft } from "../../../assets/icons";
-import { buttonsMenu } from "./buttons";
+import { buttonsMenu } from "../../../utils/buttons";
 
-export default function Menu() {
-  const [clicked, setClicked] = useState("button1");
-  const [openMenu, setOpenMenu] = useState(true);
-  const [chevronClassName, setChevronClassName] = useState("chevron-left");
-  const [menuClassName, setMenuClassName] = useState("background-menu");
+export default function Menu({ clicked, setClicked, openMenu, setOpenMenu }) {
+  const [chevronClassName, setChevronClassName] = useState("");
+  const [menuClassName, setMenuClassName] = useState("");
+
+  useEffect(() => {
+    const menuClassName = openMenu
+      ? "background-menu"
+      : "background-menu background-menu--closed";
+    const chevronClassName = openMenu
+      ? "chevron-left"
+      : "chevron-left chevron-left--rotated";
+
+    setMenuClassName(menuClassName);
+    setChevronClassName(chevronClassName);
+  }, [openMenu]);
 
   function CloseMenu() {
-    setMenuClassName("background-menu background-menu--closed");
-    setChevronClassName("chevron-left chevron-left--rotated");
     setOpenMenu(false);
   }
 
   const OpenMenu = () => {
-    setMenuClassName("background-menu");
-    setChevronClassName("chevron-left");
     setOpenMenu(true);
   };
 
+  console.log(openMenu);
   return (
     <div className={menuClassName} id="menu">
       <div className="buttons-menu">

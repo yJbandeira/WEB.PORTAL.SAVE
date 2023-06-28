@@ -5,7 +5,7 @@ import {
   InformationCircleIcon,
   RestaurantIcon,
   TvIcon,
-} from "../../../assets/icons";
+} from "../assets/icons";
 
 export const buttonsMenu = [
   {

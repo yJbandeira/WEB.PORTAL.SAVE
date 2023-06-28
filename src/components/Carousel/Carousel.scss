@@ -1,0 +1,59 @@
+.carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  .nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 8px;
+    font-size: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+    transition: background-color 0.3s;
+    color: transparent;
+    height: 100%;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.2);
+      color: black;
+    }
+  }
+
+  .right {
+    right: 0px;
+  }
+  
+  .carousel-wrapper {
+    display: flex;
+    overflow: scroll;
+    scroll-behavior: smooth;
+
+    .carousel-item {
+      flex: 0 0 260px;
+      margin-right: 16px;
+      transition: transform 0.3s ease-in-out;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .carousel-wrapper::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
+
+  .card-image {
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
