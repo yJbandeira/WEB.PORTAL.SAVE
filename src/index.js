@@ -4,11 +4,14 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { NextUIProvider } from "@nextui-org/react";
+import ContextProvider from "./globalState/provider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <NextUIProvider disableBaseline>
-    <App />
+    <ContextProvider>
+      <App />
+    </ContextProvider>
   </NextUIProvider>
 );
 

@@ -11,7 +11,7 @@ import {
 
 import JoaoAvatar from "../../assets/images/JoaoAvatar.jpg";
 import Home from "../Home";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Comida from "../Comida";
 import Filmes from "../Filmes";
 import Restaurantes from "../Restaurantes";
@@ -19,10 +19,42 @@ import Lugares from "../Lugares";
 import Geral from "../Geral";
 import HamburgerMenu from "../../components/HamburgerMenu/Index";
 import ContentMenu from "./ContentMenu";
+import {
+  addDoc,
+  collection,
+  doc,
+  onSnapshot,
+  query,
+  setDoc,
+} from "firebase/firestore";
+import { db } from "../../firebase";
+import { FoodIcon } from "../../assets/icons";
+import { selectCards, addCards } from "../../data/cardsData";
+import { Context } from "../../globalState/context";
 
 export default function MainPage() {
+  const { cards, setCards } = useContext(Context);
   const [clicked, setClicked] = useState("button1");
   const [openMenu, setOpenMenu] = useState(false);
+
+  useEffect(() => {
+    async function effect() {
+      setCards(await selectCards());
+
+      // const teste = {
+      //   srcImage: "teste",
+      //   category: {
+      //     name: "Restaurantes",
+      //     icon: "restaurante",
+      //   },
+      //   link: "https://www.instagram.com/p/CsoUx-Pgnls/",
+      // };
+
+      // await addCards(teste);
+    }
+
+    effect();
+  }, []);
 
   return (
     <div className="layout">

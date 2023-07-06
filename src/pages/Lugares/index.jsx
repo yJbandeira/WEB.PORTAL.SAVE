@@ -1,9 +1,10 @@
 import { Button, Card, Col, Row, Spacer, Text } from "@nextui-org/react";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "./index.scss";
 import { FoodIcon, LinkIcon } from "../../assets/icons";
 import Carousel from "../../components/Carousel/Carousel";
 import { homeCards } from "../../utils/HomeCards";
+import { Context } from "../../globalState/context";
 
 export default function Lugares() {
   const [user, setUser] = useState({
@@ -11,6 +12,8 @@ export default function Lugares() {
     email: "joaoml.victor13@gmail.com",
     userName: "yjbandeira",
   });
+
+  const { cards, setCards } = useContext(Context);
 
   return (
     <div className="home-page">
@@ -21,7 +24,7 @@ export default function Lugares() {
       <Text h4>Ultimos adicionados</Text>
       <Spacer y={1} />
       <Carousel
-        items={homeCards.filter((card) => card.category.name === "Lugares")}
+        items={cards.filter((card) => card.category.name === "Lugares")}
       />
     </div>
   );
